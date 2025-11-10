@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: web
-        image: ghcr.io/hoodwink02/python-app:2a768c2
+        image: ghcr.io/hoodwink02/python-app:76e3346
         ports:
         - containerPort: 5000
       imagePullSecrets:
