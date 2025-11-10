@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-app
+  namespace: python-app-ns
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: python-app
+  template:
+    metadata:
+      labels:
+        app: python-app
+    spec:
+      containers:
+      - name: web
+        image: ghcr.io/hoodwink02/python-app:initial-tag # 這裡的標籤會被 Action 自動替換
+        ports:
+        - containerPort: 5000
+      imagePullSecrets:
+      - name: ghcr-creds # 關鍵：k3s 需要這個 Secret 來拉取私有映像
