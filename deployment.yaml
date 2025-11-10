@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: web
-        image: ghcr.io/hoodwink02/python-app:initial-tag # 這裡的標籤會被 Action 自動替換
+        image: ghcr.io/hoodwink02/python-app:78e32f0
         ports:
         - containerPort: 5000
       imagePullSecrets:
